@@ -1,9 +1,10 @@
 require "rubygems"
 require "sinatra"
-require "datamapper"
+require "hackday.rb"
+require "dm-core"
 require "sinatra-authentication"
 
-set :environment :devlopment
+set :environment, :devlopment
 
 
-Sinatra::Application::Run
+run Sinatra::Application
