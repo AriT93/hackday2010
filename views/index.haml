@@ -1,2 +1,4 @@
 %h1
-  hiya
+  hiya #{@user.email}
+  - @user.accounts.each do |a|
+    %h3 #{a.balance}

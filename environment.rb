@@ -3,11 +3,13 @@ require 'dm-core'
 require 'dm-timestamps'
 require 'dm-validations'
 require 'dm-aggregates'
+require 'digest/sha1'
 require 'dm-migrations'
 require 'haml'
 require 'ostruct'
 
 require 'sinatra' unless defined?(Sinatra)
+require 'sinatra-authentication'
 
 configure do
   SiteConfig = OpenStruct.new(
@@ -22,5 +24,4 @@ configure do
 
 
   DataMapper.setup(:default, (ENV["DATABASE_URL"] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/#{Sinatra::Base.environment}.db"))
-
 end

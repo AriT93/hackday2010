@@ -1,9 +1,16 @@
 require "rubygems"
+require 'environment'
 require 'sinatra'
 require 'dm-core'
+require 'digest/sha1'
 require 'sinatra-authentication'
-require 'environment'
 require 'haml'
+require 'rack-flash'
+
+use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
+use Rack::Flash
+
+
 
 
 error do
@@ -13,9 +20,19 @@ error do
 end
 
 helpers do
-  # add your helpers here
+  #define helpers here
+end
+
+before do
+  @user = nil
 end
 
 get '/' do
+  redirect '/login' unless logged_in?
+  @user = HdUser.first(:email => current_user.email)
+  if @user == nil
+    @user = HdUser.new(:email => current_user.email)
+    @user.save
+  end
   haml :index
 end

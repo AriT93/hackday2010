@@ -1,4 +1,4 @@
-class User
+class HdUser
   include DataMapper::Resource
 
   property :id, Serial
