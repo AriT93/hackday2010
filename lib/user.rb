@@ -4,4 +4,6 @@ class User
   property :id, Serial
   property :email, String
   property :name, String
+
+  has n, :accounts
 end
