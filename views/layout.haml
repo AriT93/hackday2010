@@ -1,4 +1,20 @@
 !!! Strict
 %html
+  %head
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/style.css"}
+    %title
+      InsuroBank
   %body
-    = yield
+    #header
+      %h1
+        hello! #header
+    .clear
+    #leftNav
+      - 10.times do
+        %h5
+          text
+    #content
+      #contentBody
+        = yield
+    .clear
+    #footer

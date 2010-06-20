@@ -2,3 +2,5 @@
   hiya #{@user.email}
   - @user.accounts.each do |a|
     %h3 #{a.balance}
+  #policies
+    = partial("policies", :collection => @user.policies)

@@ -6,4 +6,5 @@ class HdUser
   property :name, String
 
   has n, :accounts
+  has n, :policies
 end

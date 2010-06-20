@@ -5,6 +5,7 @@ require 'dm-core'
 require 'digest/sha1'
 require 'sinatra-authentication'
 require 'haml'
+require 'sass'
 require 'rack-flash'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
@@ -21,6 +22,9 @@ end
 
 helpers do
   #define helpers here
+  def partial(name, options={})
+    haml("_#{name.to_s}".to_sym, options.merge(:layout => false))
+  end
 end
 
 before do
@@ -35,4 +39,9 @@ get '/' do
     @user.save
   end
   haml :index
+end
+
+get '/css/style.css' do
+  content_type 'text/css'
+  sass :style
 end
