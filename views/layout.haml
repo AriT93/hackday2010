@@ -7,12 +7,13 @@
   #header
     %h1 bank in a box
     %h1.headH1 now with facebook!
-  #contentMast
-    %h1
-      - if logged_in?
-        Welcome #{@user.name}
-      - else
-        Please Log In
+    #contentMast
+      %h1
+        - if logged_in?
+          Welcome #{@user.name}
+        - else
+          Please Log In
+  .clear
   #leftNav
     %img{:src => 'images/nav.jpg', :alt => "navImage"}
     .clear
