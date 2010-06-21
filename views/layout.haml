@@ -8,7 +8,11 @@
     %h1 bank in a box
     %h1.headH1 now with facebook!
   #contentMast
-    %h1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    %h1
+      - if logged_in?
+        Welcome #{@user.name}
+      - else
+        Please Log In
   #leftNav
     %img{:src => 'images/nav.jpg', :alt => "navImage"}
     .clear
@@ -23,4 +27,5 @@
       = yield
     .clear
   #footer
+    %a{:href => "/logout"}logout
     &copy; box of bank inc. llc.

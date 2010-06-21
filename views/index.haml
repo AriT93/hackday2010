@@ -1,6 +1,31 @@
-%h1
-  hiya #{@user.email}
-  - @user.accounts.each do |a|
-    %h3 #{a.balance}
-  #policies
-    = partial("policies", :collection => @user.policies)
+%p
+
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+  tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+  mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis
+  parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+  dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam
+  rutrum. Nam vestibulum accumsan nisl.
+  .clear
+  #infoBoxes
+    #policies
+      .boxhead policies
+      = partial("policies", :collection => @user.policies)
+    #accounts
+      .boxhead accounts
+      - @user.accounts.each do |a|
+        %p #{a.accountNum}
+        %p #{a.balance}
+    #claims
+      .boxhead claims
+    #messages
+      .boxhead messages
+  .clear
+%p
+
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+  tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+  mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis
+  parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+  dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam
+  rutrum. Nam vestibulum accumsan nisl.
