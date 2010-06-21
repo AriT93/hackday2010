@@ -1,20 +1,26 @@
 !!! Strict
 %html
   %head
-    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/style.css"}
-    %title
-      InsuroBank
+    %title bank box
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
   %body
-    #header
-      %h1
-        hello! #header
+  #header
+    %h1 bank in a box
+    %h1.headH1 now with facebook!
+  #contentMast
+    %h1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  #leftNav
+    %img{:src => 'images/nav.jpg', :alt => "navImage"}
     .clear
-    #leftNav
-      - 10.times do
-        %h5
-          text
-    #content
-      #contentBody
-        = yield
+    %ul
+      %li balances
+      %li claims
+      %li endorsments
+      %li change group
+      %li update inventory
+  #body
+    #contentBody
+      = yield
     .clear
-    #footer
+  #footer
+    &copy; box of bank inc. llc.
