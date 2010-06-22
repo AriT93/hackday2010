@@ -42,6 +42,9 @@ get '/' do
     @user = HdUser.new(:email => current_user.email)
     @user.save
   end
+  if fb[:name] and @user.name == ""
+    @user.name = fb[:name]
+  end
   haml :index
 end
 
