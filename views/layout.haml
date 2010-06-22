@@ -5,8 +5,7 @@
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
   %body
   #header
-    %h1 bank in a box
-    %h1.headH1 now with facebook!
+    %img{:src => "images/masthead.jpg", :alt => "Insure Barn"}
     #contentMast
       %h1
         - if logged_in?
@@ -14,16 +13,7 @@
         - else
           Please Log In
   .clear
-  #leftNav
-    %img{:src => 'images/nav.jpg', :alt => "navImage"}
-    .clear
-    %ul
-      %li balances
-      %li claims
-      %li endorsments
-      %li change group
-      %li update inventory
-  #body
+  #HDbody
     #contentBody
       = yield
     .clear

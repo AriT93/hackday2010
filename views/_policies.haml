@@ -1,5 +1,6 @@
+- i = 0
 - @user.policies.each do |pol|
-
   #policy
-    %h3 #{pol.policyNum}
-    %p #{pol.policyType}
+    %p{:id => "#{i.even?}" + "_l"} #{pol.policyNum}
+    %p{:id => "#{i.even?}" + "_r"} #{pol.policyType}
+  - i = i+1

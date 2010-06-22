@@ -1,8 +1,13 @@
+$pageWidth: 1024px
+$halfWidth: 500px
+$brandColor: #1707CC
+$bkgColor: #FFFFFF
+
 *
   font-family: sans-serif
   background-color: white
 html
-  background-color: #dcdcdc
+  background-color: $bkgColor
 #header
   min-height: 70px
   .headH1
@@ -10,17 +15,19 @@ html
     font-size: small
     padding-right: 1em
 #contentMast
-  height: 5em
+  margin-top: -80px
+  margin-left: 5px
+  height: 72px
+  color: white
+  font-style: italic
 #contentBody
   height: inhereit
-#body
-  margin-left: 225px
-  padding: 1em 0 0 1em
+#HDbody
   min-height: 768px
   font-family: sans-serif
   font-size: medium
   font-weight: bold
-  min-width: 45em
+  width: $pageWidth
 #finePrint
   width: 100px
   clear: left
@@ -30,7 +37,7 @@ html
   font-weight: 300
   font-size: small
   margin:  1em 2em 0 2em
-  min-width: 200px
+  width: 200px
   min-height: 300px
   img
     height: 72px
@@ -54,38 +61,123 @@ html
   padding-right: 5px
   float: left
   min-height: 150px
-  width: 23%
+  width: $halfWidth
 #accounts
   float: left
+  clear: right
   padding-left: 4px
   padding-right: 4px
   min-height: 150px
-  width: 23%
+  width: $halfWidth
 #claims
   float: left
   padding-left: 4px
   padding-right: 4px
   min-height: 150px
-  width: 23%
+  width: $halfWidth
 #messages
   float: left
+  clear: right
   padding-left: 4px
   padding-right: 4px
   min-height: 150px
-  width: 23%
+  width: $halfWidth
 .boxhead
+  width: 500px
   font-size: 10pt
   font-weight: bolder
-  border: 1px solid DarkBlue
+  border-bottom: 2px solid $brandColor
   padding-left: 1px
   padding-right: 1px
-  text-align: center
+  padding-bottom: 2px
+  text-align: left
   min-height: 15px
-  color: DarkBlue
-  background: -moz-linear-gradient(top,#dcdcdc, #FFF)
-  background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC),to(#F0F0F0))
-  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#DCDCDC', EndColorStr='#A1A1A1',GradientType=0)
+  color: $brandColor
+.boxhead_l
+  width: 346px
+  font-size: 10pt
+  font-weight: bolder
+  border-bottom: 2px solid $brandColor
+  padding-left: 1px
+  padding-right: 1px
+  padding-bottom: 2px
+  text-align: left
+  min-height: 15px
+  color: $brandColor
+.boxhead_r
+  width: 146px
+  font-size: 10pt
+  font-weight: bolder
+  border-bottom: 2px solid $brandColor
+  padding-left: 1px
+  padding-right: 1px
+  padding-bottom: 2px
+  text-align: left
+  min-height: 15px
+  margin-top: -19px
+  margin-left: 350px
+  color: #666666
+.boxfoot
+  font-size: 10pt
+  font-weight: normal
+  padding-left: 2px
+  padding-right: 4px
+  padding-bottom: 2px
+  text-align: right
+  min-height: 15px
+  color: $brandColor
+  margin-bottom: 20px
 #policy h3, p
   font-size: small
 .clear
   clear: both
+#false_l
+  width: 346px
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  margin-top: 0px
+  margin-bottom: 0px
+#false_r
+  width: 146px
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  padding-left: 350px
+  margin-top: -20px
+  margin-bottom: 0px
+#false
+  font-weight: normal
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  margin-top: 0px
+  margin-bottom: 0px
+#true_l
+  background-color: lighten($brandColor, 50%)
+  width: 346px
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  margin-top: 0px
+  margin-bottom: 0px
+#true_r
+  background-color: lighten($brandColor, 50%)
+  width: 146px
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  padding-left: 350px
+  margin-top: -20px
+  margin-bottom: 0px
+#true
+  font-weight: normal
+  background-color: lighten($brandColor, 50%)
+  height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  margin-top: 0px
+  margin-bottom: 0px
+
+
+

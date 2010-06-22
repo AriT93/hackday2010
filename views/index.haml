@@ -1,23 +1,23 @@
 %p
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
-  tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
-  mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis
-  parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
-  dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam
-  rutrum. Nam vestibulum accumsan nisl.
   #infoBoxes
     #policies
-      .boxhead policies
+      .boxhead_l Policies
+      .boxhead_r Type
       = partial("policies", :collection => @user.policies)
+      .boxfoot add
     #accounts
-      .boxhead accounts
-      - @user.accounts.each do |a|
-        %p #{a.accountNum}
-        %p #{a.balance}
+      .boxhead_l Accounts
+      .boxhead_r Balance
+      = partial("accounts", :collection => @user.accounts)
+      .boxfoot add
     #claims
-      .boxhead claims
+      .boxhead_l Claims
+      .boxhead_r
+      .boxfoot add
     #messages
-      .boxhead messages
+      .boxhead Messages
+      .false Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+      .boxfoot add
   .clear
 %p
 
