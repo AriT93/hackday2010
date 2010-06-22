@@ -34,6 +34,7 @@ end
 
 get '/' do
   redirect '/login' unless logged_in?
+  redirect "/users/#{current_user.id}/edit" unless current_user.email
   @user = HdUser.first(:email => current_user.email)
   if @user == nil
     @user = HdUser.new(:email => current_user.email)
