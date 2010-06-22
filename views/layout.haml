@@ -17,6 +17,7 @@
             Hello,
             %fb:profile-pic{:uid => fb[:user]}
             %fb:name{:uid => fb[:user], :useyou => 'false'}
+            %fb:email{:uid => fb[:user]}
           - else
             Welcome #{@user.name}
         - else
