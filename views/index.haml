@@ -1,6 +1,6 @@
-= fb.users.getInfo :uid => fb[:user], :fields =>[:name, :email]
+= fb.users.getInfo :uid => fb[:user], :fields =>[:name]
 - @hashinfo = fb.users.getInfo :uid => fb[:user], :fields =>[:name, :email]
-"#{@hashinfo[:email]}  "  " #{@hashinfo[:name]}"
+"#{@hashinfo[:email]}  #{fb[:user]}"
 %p
   #infoBoxes
     #policies
