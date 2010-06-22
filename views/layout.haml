@@ -19,6 +19,9 @@
             Welcome #{@user.name}
         - else
           Please Log In
+        - unless current_user.fb_uid
+          |
+          = render_facebook_connect_link('Link account with FaceBook')
   .clear
   #leftNav
     %img{:src => 'images/nav.jpg', :alt => "navImage"}
