@@ -2,7 +2,7 @@ set :application, "hackday2010"
 set :repository,  "git@github.com:AriT93/hackday2010.git"
 set :deploy_to, "/home/hackday"
 set :user, "abturet"
-set :deploy_via, :remote_cache
+
 set :use_sudo, false
 
 set :scm, :git
