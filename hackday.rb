@@ -49,3 +49,7 @@ get '/css/style.css' do
   content_type 'text/css'
   sass :style
 end
+
+get '/logout' do
+  haml "= render_login_logout"
+end
