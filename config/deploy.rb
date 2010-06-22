@@ -22,6 +22,7 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#     run "#{try_sudo} ln -s /home/hackday/devleopment.db /home/hackday/current/devleopment.db"
+    run "#{try_sudo} ln -s /home/hackday/facebooker.yml /home/hackday/current/facebooker.yml"
+    run "#{try_sudo} ln -s /home/hackday/development.db /home/hackday/current/production.db"
   end
 end
