@@ -13,11 +13,12 @@
     #contentMast
       %h1
         - if logged_in?
-          Welcome #{@user.name}
-        - elsif fb[:user]
-          Hello,
-          %fb:profile-pic{:uid => fb[:user]}
-          %fb:name{:uid => fb[:user], :useyou => 'false'}
+          - if fb[:user]
+            Hello,
+            %fb:profile-pic{:uid => fb[:user]}
+            %fb:name{:uid => fb[:user], :useyou => 'false'}
+          - else
+            Welcome #{@user.name}
         - else
           Please Log In
   .clear
