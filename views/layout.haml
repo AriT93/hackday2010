@@ -15,7 +15,7 @@
         - if logged_in?
           Welcome #{@user.name}
         - else
-          - elsif fb[:user]
+          - if fb[:user]
             %fb:profile-pic{:uid => fb[:user]}
               %fb:name{:uid => fb[:user], :useyou => 'false', :firstnameonly => 'true'}
 
