@@ -50,6 +50,14 @@ get '/css/style.css' do
   sass :style
 end
 
+get '/login' do
+  haml :login
+end
+
+get 'signup' do
+  haml :signup
+end
+
 get '/logout' do
   haml "= render_login_logout"
 end
