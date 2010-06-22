@@ -1,9 +1,12 @@
 !!! Strict
-%html
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", :'xmlns:fb'=>"http://www.facebook.com/2008/fbml"}
   %head
     %title bank box
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
+    %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
   %body
+    :javascript
+      FB.init("#{fb.api_key}","/receiver")
   #header
     %h1 bank in a box
     %h1.headH1 now with facebook!
@@ -11,6 +14,9 @@
       %h1
         - if logged_in?
           Welcome #{@user.name}
+        - elsif fb[:user]
+          %fb:profile-pic{:uid => fb[:user]}
+          %fb:name{:uid => fb[:user], :useyou => 'false', :firstnameonly => 'true'}
         - else
           Please Log In
   .clear
