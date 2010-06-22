@@ -14,10 +14,11 @@
       %h1
         - if logged_in?
           Welcome #{@user.name}
-        - elsif fb[:user]
-          %fb:profile-pic{:uid => fb[:user]}
-          %fb:name{:uid => fb[:user], :useyou => 'false', :firstnameonly => 'true'}
         - else
+          - elsif fb[:user]
+            %fb:profile-pic{:uid => fb[:user]}
+              %fb:name{:uid => fb[:user], :useyou => 'false', :firstnameonly => 'true'}
+
           Please Log In
   .clear
   #leftNav
