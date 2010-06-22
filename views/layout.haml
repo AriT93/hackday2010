@@ -37,4 +37,6 @@
     .clear
   #footer
     %a{:href => "/logout"}logout
+    - if current_user
+      %a{:href = "/users/#{current_user.id}/edit"}My Account
     &copy; box of bank inc. llc.
