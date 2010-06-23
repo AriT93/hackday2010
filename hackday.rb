@@ -44,17 +44,17 @@ get '/' do
     current_user.destroy!
     flash[:notice] ="You need to login or create an account first then link it to your Facebook account"
     haml "= render_login_logout"
-    return
+  else
+    @user = HdUser.first(:email => current_user.email)
+    if @user == nil
+      @user = HdUser.new(:email => current_user.email)
+      @user.save
+    end
+    if fb[:name] and @user.name == ""
+      @user.name = fb[:name]
+    end
+    haml :index
   end
-  @user = HdUser.first(:email => current_user.email)
-  if @user == nil
-    @user = HdUser.new(:email => current_user.email)
-    @user.save
-  end
-  if fb[:name] and @user.name == ""
-    @user.name = fb[:name]
-  end
-  haml :index
 end
 
 get '/css/style.css' do
