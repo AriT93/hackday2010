@@ -8,6 +8,7 @@
   #header
     %img{:class => "ad", :src => "images/masthead.gif", :alt => "Insure Barn"}
     %img{:class => "ad", :src => "images/ad_w-facebook.gif", :alt => "Now with Facebook!"}
+    %img{:class => "ad", :src => "images/ad_blank.gif", :alt => "This space intentionally left blank."}
     #contentMast
       %h1
         - if logged_in?
@@ -16,9 +17,7 @@
             %fb:profile-pic{:uid => fb[:user]}
             %fb:name{:uid => fb[:user], :useyou => 'false'}
           - else
-            Welcome 
-            %br
-            #{@user.name}
+            Welcome #{@user.name}
         - else
           Please Log In
         - if !current_user.fb_uid  && logged_in?
