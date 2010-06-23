@@ -70,5 +70,6 @@ get '/canvas/' do
     @email = DmUser.first(:fb_uid => fb[:user])
     @user = HdUser.first(:email => @email.to_s)
   end
-  haml :index, :layout => :fbook
+  @email
+  haml :fbook2, :layout => false
 end
