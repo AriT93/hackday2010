@@ -1,0 +1,6 @@
+- i = 0
+- @user.messages.each do |msg|
+  #policy
+    %p{:class => "#{i.even?}" + "_l"} #{msg.subject}
+    %p{:class => "#{i.even?}" + "_r"} #{msg.from}
+  - i = i+1

@@ -1,0 +1,6 @@
+- i = 0
+- @user.claims.each do |claim|
+  #policy
+    %p{:class => "#{i.even?}" + "_l"} #{claim.claimNum}
+    %p{:class => "#{i.even?}" + "_r"} #{claim.status}
+  - i = i+1
