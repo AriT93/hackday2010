@@ -13,10 +13,10 @@
     #contentMast
       %p
         - if logged_in? && fb[:user]
-            Welcome
-            %fb:name{:uid => fb[:user], :useyou => 'false'}
+          Welcome
+          %fb:name{:uid => fb[:user], :useyou => 'false'}
         - elsif logged_in?
-            Welcome #{@user.name}
+          Welcome #{@user.name}
         - else
           Please Log In
         - if !current_user.fb_uid  && logged_in?
