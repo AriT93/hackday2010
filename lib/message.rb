@@ -6,4 +6,6 @@ class Message
   property :dateStamp, Date, :default => Date.today.strftime('%m/%d/%Y')
   property :from, String
   property :subject, String
+
+  belongs_to :hd_user
 end
