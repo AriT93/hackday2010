@@ -32,6 +32,4 @@
     .clear
   #footer
     = render_login_logout
-    - if logged_in?
-      %a{:href => "/users/#{current_user.id}/edit"}My Account
     &copy; box of bank inc. llc.
