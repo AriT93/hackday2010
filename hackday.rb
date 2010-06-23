@@ -66,5 +66,5 @@ get '/logout' do
 end
 
 get '/canvas' do
-  haml :index , :layout => :fbook
+  haml :index , :layout => false
 end
