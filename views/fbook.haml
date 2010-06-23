@@ -1,0 +1,36 @@
+!!! Strict
+%html{:xmlns=>"http://www.w3.org/1999/xhtml", :'xmlns:fb'=>"http://www.facebook.com/2008/fbml"}
+  %head
+    %title bank box
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
+    %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
+  #header
+    %img{:class => "ad", :src => "images/masthead.gif", :alt => "Insure Barn"}
+    %img{:class => "ad", :src => "images/ad_w-facebook.gif", :alt => "Now with Facebook!"}
+    %img{:class => "ad", :src => "images/ad_blank.gif", :alt => "This space intentionally left blank."}
+    .clear
+    #contentMast
+      %p
+        - if logged_in?
+          - if fb[:user]
+            You are!
+            %fb:profile-pic{:uid => fb[:user]}
+            %fb:name{:uid => fb[:user], :useyou => 'false'}
+          - else
+            Welcome #{@user.name}
+        - else
+          Please Log In
+        - if !current_user.fb_uid  && logged_in?
+          = render_facebook_connect_link('Link account with FaceBook')
+  .clear
+  #HDbody
+    #contentBody
+      = yield
+    :javascript
+      FB.init("#{fb.api_key}","/receiver")
+    .clear
+  #footer
+    %a{:href => "/logout"}logout
+    - if logged_in?
+      %a{:href => "/users/#{current_user.id}/edit"}My Account
+    &copy; box of bank inc. llc.
