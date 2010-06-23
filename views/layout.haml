@@ -19,8 +19,10 @@
           Welcome #{@user.name}
         - else
           Please Log In
-        - if  logged_in? && !current_user.fb_uid
-          = render_facebook_connect_link('Link account with FaceBook')
+        - if  logged_in?
+          - if current_user
+            - if !current_user.fb_uid
+              = render_facebook_connect_link('Link account with FaceBook')
   .clear
   #HDbody
     #contentBody
