@@ -69,11 +69,11 @@ get '/connect' do
 
     if user != nil
       if !user.fb_uid || user.fb_uid != fb[:user]
-        user.update :fb_uid => fb[:user]
+#        user.update :fb_uid => fb[:user]
       end
       session[:user] = user.id
     else
-#      user = User.set!(:fb_uid => fb[:user])
+      user = User.set!(:fb_uid => fb[:user])
 #      session[:user] = user.id
       flash[:notice] ="You need to login or create an account first then link it to your Facebook account"
       redirect '/login'
