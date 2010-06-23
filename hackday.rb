@@ -44,6 +44,7 @@ get '/' do
     current_user.destroy!
     flash[:notice] ="You need to login or create an account first then link it to your Facebook account"
     haml "= render_login_logout"
+    return
   end
   @user = HdUser.first(:email => current_user.email)
   if @user == nil
