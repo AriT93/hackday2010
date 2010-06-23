@@ -31,7 +31,7 @@
       FB.init("#{fb.api_key}","/receiver")
     .clear
   #footer
-    %a{:href => "/logout"}logout
+    = render_login_logout
     - if logged_in?
       %a{:href => "/users/#{current_user.id}/edit"}My Account
     &copy; box of bank inc. llc.
