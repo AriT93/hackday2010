@@ -1,6 +1,6 @@
 - i = 0
 - @user.accounts.each do |acc|
   #policy
-    %p{:id => "#{i.even?}" + "_l"} #{acc.accountNum}
-    %p{:id => "#{i.even?}" + "_r"} #{acc.balance}
+    %p{:class => "#{i.even?}" + "_l"} #{acc.accountNum}
+    %p{:class => "#{i.even?}" + "_r"} #{acc.balance}
   - i = i+1
