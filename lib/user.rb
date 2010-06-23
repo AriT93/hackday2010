@@ -7,4 +7,6 @@ class HdUser
 
   has n, :accounts
   has n, :policies
+  has n, :messages
+  has n, :claims
 end
