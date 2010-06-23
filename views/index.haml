@@ -14,11 +14,12 @@
       .boxfoot add
     #claims
       .boxhead_l Claims
-      .boxhead_r
+      .boxhead_r Status
       = partial("claims", :collection => @user.claims)
       .boxfoot add
     #messages
-      .boxhead Messages
+      .boxhead_l Messages
+      .boxhead_r From
       = partial("messages", :collection => @user.messages)
       .boxfoot add
   .clear
