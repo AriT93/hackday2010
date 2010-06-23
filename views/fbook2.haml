@@ -1,4 +1,8 @@
+%link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://hackday.turetzky.org/css/style.css'}
 %fb:dashboard
   %fb:header{:decoration =>'add_border', :icon => 'true'} hackday!
-%h1
-  #{@email.email}
+%fb:tabs
+  %fb:tab-item{:href => "http://hackday.turetzky.org/fbclaims", :title => "Claims"}
+  %fb:tab-item{:href => "http://hackday.turetzky.org/fbaccounts", :title => "Accounts"}
+  %fb:tab-item{:href => "http://hackday.turetzky.org/fbpolicies", :title => "Policies"}
+  %fb:tab-item{:href => "http://hackday.turetzky.org/fbmessages", :title => "Messages"}

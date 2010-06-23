@@ -26,6 +26,12 @@ helpers do
   def partial(name, options={})
     haml("_#{name.to_s}".to_sym, options.merge(:layout => false))
   end
+  def fb2hd
+    if fb[:user]
+      @email = DmUser.first(:fb_uid => fb[:user].to_s)
+      @user = HdUser.first(:email => @email.email)
+    end
+  end
 end
 
 before do
@@ -70,6 +76,21 @@ get '/canvas/' do
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
     @user = HdUser.first(:email => @email.email)
   end
-  #{@email.email}
-  haml :index, :layout => :fbook
+  haml :fbook2, :layout => false
+end
+
+get '/fbaccounts' do
+  haml :fbaccounts
+end
+
+get '/fbmessages' do
+  haml :fbmessages
+end
+
+get '/fbclaims' do
+  haml :fbclaims
+end
+
+get '/fbpolicies' do
+  haml :fbpolicies
 end
