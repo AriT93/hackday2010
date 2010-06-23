@@ -64,7 +64,7 @@ get '/connect' do
     if current_user.class != GuestUser
       user = current_user
     else
-      user = User.get(:fb_uid => fb[:user])
+#      user = User.get(:fb_uid => fb[:user])
     end
 
     if user != nil
