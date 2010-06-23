@@ -14,7 +14,7 @@
       %p
         - if logged_in? && fb[:user]
           Welcome
-          %fb:profile-pic{:uid => fb[:user], :size => 'small'}
+          %fb:profile-pic{:uid => fb[:user]}
           %fb:name{:uid => fb[:user], :useyou => 'false'}
         - elsif logged_in?
           Welcome #{@user.name}
