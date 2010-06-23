@@ -107,7 +107,7 @@ get '/connect' do
       user = User.get(:fb_uid => fb[:user])
     end
 
-    if user
+    if user != nil
       if !user.fb_uid || user.fb_uid != fb[:user]
         user.update :fb_uid => fb[:user]
       end
