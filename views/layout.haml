@@ -6,7 +6,8 @@
     %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
   %body
   #header
-    %img{:src => "images/masthead.gif", :alt => "Insure Barn"}
+    %img{:class => "ad", :src => "images/masthead.gif", :alt => "Insure Barn"}
+    %img{:class => "ad", :src => "images/ad_w-facebook.gif", :alt => "Now with Facebook!"}
     #contentMast
       %h1
         - if logged_in?
@@ -15,7 +16,9 @@
             %fb:profile-pic{:uid => fb[:user]}
             %fb:name{:uid => fb[:user], :useyou => 'false'}
           - else
-            Welcome #{@user.name}
+            Welcome 
+            %br
+            #{@user.name}
         - else
           Please Log In
         - if !current_user.fb_uid  && logged_in?
