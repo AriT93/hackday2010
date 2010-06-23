@@ -60,6 +60,7 @@ get '/css/style.css' do
 end
 
 get '/connect' do
+  redirect 'http://cnn.com'
   if fb[:user]
     if current_user.class != GuestUser
       user = current_user
