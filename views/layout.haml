@@ -1,7 +1,7 @@
 !!! Strict
 %html{:xmlns=>"http://www.w3.org/1999/xhtml", :'xmlns:fb'=>"http://www.facebook.com/2008/fbml"}
   %head
-    %title bank box
+    %title Insure Barn
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
     %script{:type => 'text/javascript', :src => 'http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US'}
   %body
@@ -19,7 +19,7 @@
           Welcome #{@user.name}
         - else
           Please Log In
-        - if !current_user.fb_uid  && logged_in?
+        - if  logged_in? && !current_user.fb_uid
           = render_facebook_connect_link('Link account with FaceBook')
   .clear
   #HDbody
