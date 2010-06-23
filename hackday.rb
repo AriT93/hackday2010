@@ -64,3 +64,7 @@ end
 get '/logout' do
   haml "= render_login_logout"
 end
+
+get '/canvas' do
+  haml :index , :layout => :fbook
+end
