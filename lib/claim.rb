@@ -11,6 +11,6 @@ class Claim
   before :save, :add_claimNum
 
   def add_claimNum
-    self.claimNum ||= "IBCLM00"#{Claim.count +1}""
+    self.claimNum ||= "IBCLM00#{Claim.count + 1}"
   end
 end
