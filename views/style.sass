@@ -1,6 +1,13 @@
-$pageWidth: 1024px
-$halfWidth: 500px
-$quarterWidth: 238px
+//800px x 600px
+//5px gutters
+
+$pageWidth: 790px
+$halfWidth: 390px
+$quarterWidth: 190px
+$rowLeft: 300px
+$rowRight: 90px
+$gutter: 5px
+$marginHalf: $halfWidth + $gutter + $gutter
 $brandColor: #1707CC
 $bkgColor: #FFFFFF
 
@@ -62,6 +69,7 @@ html
   float: left
   min-height: 150px
   width: $halfWidth
+  margin-bottom: 20px
 #accounts
   float: left
   clear: right
@@ -69,12 +77,14 @@ html
   padding-right: 4px
   min-height: 150px
   width: $halfWidth
+  margin-bottom: 20px
 #claims
   float: left
   padding-left: 4px
   padding-right: 4px
   min-height: 150px
   width: $halfWidth
+  margin-bottom: 20px
 #messages
   float: left
   clear: right
@@ -82,8 +92,9 @@ html
   padding-right: 4px
   min-height: 150px
   width: $halfWidth
+  margin-bottom: 20px
 .boxhead
-  width: 500px
+  width: $halfWidth
   font-size: 10pt
   font-weight: bolder
   border-bottom: 2px solid $brandColor
@@ -94,7 +105,7 @@ html
   min-height: 15px
   color: $brandColor
 .boxhead_l
-  width: 346px
+  width: $rowLeft
   font-size: 10pt
   font-weight: bolder
   border-bottom: 2px solid $brandColor
@@ -105,7 +116,7 @@ html
   min-height: 15px
   color: $brandColor
 .boxhead_r
-  width: 146px
+  width: $rowRight
   font-size: 10pt
   font-weight: bolder
   border-bottom: 2px solid $brandColor
@@ -115,7 +126,7 @@ html
   text-align: left
   min-height: 15px
   margin-top: -19px
-  margin-left: 350px
+  margin-left: $rowLeft
   color: #666666
 .boxfoot
   font-size: 10pt
@@ -126,37 +137,37 @@ html
   text-align: right
   min-height: 15px
   color: $brandColor
-  margin-bottom: 20px
+  width: $halfWidth
 #policy h3, p
   font-size: small
 .clear
   clear: both
 .false_l
-  width: 346px
+  width: $rowLeft
   height: 16px
   padding-top: 2px
   padding-bottom: 2px
   margin-top: 0px
   margin-bottom: 0px
 .false_r
-  width: 146px
+  width: $rowRight
   height: 16px
   padding-top: 2px
   padding-bottom: 2px
-  padding-left: 350px
+  padding-left: $rowLeft
   margin-top: -20px
   margin-bottom: 0px
 .false
   font-weight: normal
   font-size: 10px
-  width: 500px
+  width: $halfWidth
   padding-top: 2px
   padding-bottom: 2px
   margin-top: 0px
   margin-bottom: 0px
 .true_l
   background-color: lighten($brandColor, 50%)
-  width: 346px
+  width: $rowLeft
   height: 16px
   padding-top: 2px
   padding-bottom: 2px
@@ -164,17 +175,17 @@ html
   margin-bottom: 0px
 .true_r
   background-color: lighten($brandColor, 50%)
-  width: 146px
+  width: $rowRight
   height: 16px
   padding-top: 2px
   padding-bottom: 2px
-  padding-left: 350px
+  padding-left: $rowLeft
   margin-top: -20px
   margin-bottom: 0px
 .true
   font-weight: normal
   background-color: lighten($brandColor, 50%)
-  width: 500px
+  width: $halfWidth
   padding-top: 2px
   padding-bottom: 2px
   margin-top: 0px
