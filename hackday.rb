@@ -43,7 +43,8 @@ get '/' do
   if !current_user.email
     current_user.destroy!
     flash[:notice] ="You need to login or create an account first then link it to your Facebook account"
-    redirect '/logout'
+    session[:user] = nil
+    redirect '/login'
   else
     @user = HdUser.first(:email => current_user.email)
     if @user == nil
