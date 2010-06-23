@@ -66,5 +66,6 @@ get '/logout' do
 end
 
 get '/canvas' do
-  haml :index
+  @user = HdUser.first(:email => current_user.email)
+  haml :index, :layout => :fbook
 end
