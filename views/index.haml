@@ -23,6 +23,7 @@
       = partial("messages", :collection => @user.messages)
       .boxfoot add
   .clear
+  %fb:live-stream
   %img{:class => "ad", :src => "http://hackday.turetzky.org/images/ad_text.gif", :alt => "Text: Yes. Drive: Yes. Both: No."}
   %img{:class => "ad", :src => "http://hackday.turetzky.org/images/ad_homegrown.jpg", :alt => "Homegrown service."}
   %img{:class => "ad", :src => "http://hackday.turetzky.org/images/ad_facebook.gif", :alt => "Friend us on Facebook."}
