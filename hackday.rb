@@ -68,8 +68,8 @@ end
 get '/canvas/' do
   if fb[:user]
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
-    @user = HdUser.first(:email => @email.to_s)
+    @user = HdUser.first(:email => @email.email)
   end
-  #{@email}
+  #{@email.email}
   haml :fbook2, :layout => false
 end
