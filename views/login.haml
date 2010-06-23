@@ -15,7 +15,7 @@
       %input{:value => "login", :type => "submit"}
       %a{:href => "/signup", :class => 'sinatra_authentication_link'}
         Signup
-    - if Sinatra.const_defined?('FacebookObject') && DmUser.find(current_user.email).fb_uid != ''
+    - if Sinatra.const_defined?('FacebookObject') && DmUser.first(current_user.email).fb_uid != ''
       .third_party_signup
         %h3.section_title One click login:
         .login_link.facebook_login
