@@ -79,18 +79,22 @@ get '/canvas/' do
   haml :fbook2, :layout => false
 end
 
-get '/fbaccounts' do
+get '/canvas/fbaccounts' do
+  fb2hd
   haml :fbaccounts
 end
 
-get '/fbmessages' do
+get '/canvas/fbmessages' do
+  fb2hd
   haml :fbmessages
 end
 
-get '/fbclaims' do
+get '/canvas/fbclaims' do
+  fb2hd
   haml :fbclaims
 end
 
-get '/fbpolicies' do
+get '/canvas/fbpolicies' do
+  fb2hd
   haml :fbpolicies
 end
