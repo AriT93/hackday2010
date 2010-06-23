@@ -14,11 +14,13 @@
       .boxfoot add
     #claims
       .boxhead_l Claims
-      .boxhead_r
+      .boxhead_r Status
+      = partial("claims", :collection => @user.claims)
       .boxfoot add
     #messages
-      .boxhead Messages
-      .false Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+      .boxhead_l Messages
+      .boxhead_r From
+      = partial("messages", :collection => @user.messages)
       .boxfoot add
   .clear
   %img{:class => "ad", :src => "images/ad_text.gif", :alt => "Text: Yes. Drive: Yes. Both: No."}
