@@ -81,20 +81,20 @@ end
 
 get '/canvas/fbaccounts' do
   fb2hd
-  haml :fbaccounts
+  haml :fbaccounts,:layout => false
 end
 
 get '/canvas/fbmessages' do
   fb2hd
-  haml :fbmessages
+  haml :fbmessages, :layout => false
 end
 
 get '/canvas/fbclaims' do
   fb2hd
-  haml :fbclaims
+  haml :fbclaims, :layout => false
 end
 
 get '/canvas/fbpolicies' do
   fb2hd
-  haml :fbpolicies
+  haml :fbpolicies, :layout => false
 end

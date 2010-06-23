@@ -1,3 +1,11 @@
+%link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://hackday.turetzky.org/css/style.css'}
+%fb:dashboard
+  %fb:header{:decoration =>'add_border', :icon => 'true'} hackday!
+%fb:tabs
+  %fb:tab-item{:href => "fbaccounts", :title => "Accounts", :selected => true}
+  %fb:tab-item{:href => "fbpolicies", :title => "Policies"}
+  %fb:tab-item{:href => "fbclaims", :title => "Claims"}
+  %fb:tab-item{:href => "fbmessages", :title => "Messages"}
 #claims
   .boxhead_l Claims
   .boxhead_r Status
