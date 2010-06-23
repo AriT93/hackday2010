@@ -6,22 +6,22 @@
       .boxhead_l Policies
       .boxhead_r Type
       = partial("policies", :collection => @user.policies)
-      .boxfoot add
+      //.boxfoot add
     #accounts
       .boxhead_l Accounts
       .boxhead_r Balance
       = partial("accounts", :collection => @user.accounts)
-      .boxfoot add
+      //.boxfoot add
     #claims
       .boxhead_l Claims
       .boxhead_r Status
       = partial("claims", :collection => @user.claims)
-      .boxfoot add
+      //.boxfoot add
     #messages
       .boxhead_l Messages
       .boxhead_r From
       = partial("messages", :collection => @user.messages)
-      .boxfoot add
+      //.boxfoot add
   .clear
   %img{:class => "ad", :src => "http://hackday.turetzky.org/images/ad_text.gif", :alt => "Text: Yes. Drive: Yes. Both: No."}
   %img{:class => "ad", :src => "http://hackday.turetzky.org/images/ad_homegrown.jpg", :alt => "Homegrown service."}
