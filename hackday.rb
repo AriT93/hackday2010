@@ -40,8 +40,10 @@ end
 
 get '/' do
   redirect '/login' unless logged_in?
-  if current_user
-    redirect "/users/#{current_user.id}/edit" unless current_user.email
+  if !current_user.email
+    current_user.destroy!
+            flash[:notice] ="You need to login or create an account first then link it to your Facebook account"
+            redirect '/login'
   end
   @user = HdUser.first(:email => current_user.email)
   if @user == nil
@@ -58,8 +60,6 @@ get '/css/style.css' do
   content_type 'text/css'
   sass :style
 end
-
-
 
 get '/login' do
   haml :login
