@@ -67,5 +67,5 @@ end
 
 get '/canvas/' do
   @user = HdUser.first(:email => current_user.email)
-  haml :index, :layout => :fbook
+  haml :index, :layout => false
 end
