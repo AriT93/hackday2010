@@ -66,6 +66,9 @@ get '/logout' do
 end
 
 get '/canvas/' do
-  @user = HdUser.first(:email => current_user.email)
+  if fb[:user]
+    email = DmUser.first(:fb_uid = fb[:user])
+    @user = HdUser.first(:email = email)
+  end
   haml :fbook2, :layout => false
 end
