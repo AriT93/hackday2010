@@ -51,10 +51,7 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    if fb[:name] and @user.name == ""
-      @user.name = fb[:name]
-    end
-    @userinfo = fb.users.getInfo :uid => fb[:user], :fields => [:name]
+    @userinfo = fb.users.getInfo :uid => 22909064, :fields => [:name]
     haml :index
   end
 end
