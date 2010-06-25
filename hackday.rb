@@ -90,12 +90,18 @@ get '/logout' do
 end
 
 get '/canvas/' do
-  if fb[:user]
-    @email = DmUser.first(:fb_uid => fb[:user].to_s)
-    @user = HdUser.first(:email => @email.email)
-    @userinfo = fb.users.getInfo :uid => 22909064, :fields => [:name]
-  end
-  haml :fbook2, :layout => false
+  fb.require_login!
+
+  groups = fb.groups.get :uid => fb[:user]
+
+  " Hey there, now that you're a member i can tell what groups you're in on facebook. <br/> #{groups.map{ |g| g['name']}.join('<br/>')}"
+
+  # if fb[:user]
+  #   @email = DmUser.first(:fb_uid => fb[:user].to_s)
+  #   @user = HdUser.first(:email => @email.email)
+  #   @userinfo = fb.users.getInfo :uid => 22909064, :fields => [:name]
+  # end
+  # haml :fbook2, :layout => false
 end
 
 get '/canvas/fbaccounts' do
