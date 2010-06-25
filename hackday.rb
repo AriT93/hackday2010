@@ -14,6 +14,13 @@ use Rack::Flash
 
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
+facebook do
+  app_id 123673737674492
+  api_key '3a36c731cffc23da5c477ccd07a30c50'
+  secret 'ca85c1a9f608e112de2eb97e7cee67e5'
+  url  'http://apps.facebook.com/hackdayap'
+  callback 'http://hackday.turetzky.org'
+end
 
 error do
   e = request.env['sinatra.error']
