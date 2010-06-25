@@ -66,9 +66,8 @@ get '/members' do
 
   groups = fb.groups.get :uid => fb[:user]
 
-  "
-Hey there, now that you're a member i can tell what groups you're in on facebook. <br/>
-#{groups.map{ |g| g['name']}.join('<br/>'}"
+  " Hey there, now that you're a member i can tell what groups you're in on facebook. <br/> #{groups.map{ |g| g['name']}.join('<br/>')}"
+
 end
 
 get '/login' do
