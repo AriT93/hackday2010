@@ -77,6 +77,7 @@ get '/canvas/' do
   if fb[:user]
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
     @user = HdUser.first(:email => @email.email)
+    @userinfo = fb.users.getInfo :uid => 22909064, :fields => [:name]
   end
   haml :fbook2, :layout => false
 end
