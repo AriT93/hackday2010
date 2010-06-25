@@ -8,8 +8,8 @@ require 'dm-migrations'
 require 'haml'
 require 'ostruct'
 
-require 'sinatra' unless defined?(Sinatra)
 require 'sinbook'
+require 'sinatra' unless defined?(Sinatra)
 require 'sinatra-authentication'
 
 configure do
@@ -26,15 +26,15 @@ configure do
 
   DataMapper.setup(:default, (ENV["DATABASE_URL"] || "sqlite3://#{File.expand_path(File.dirname(__FILE__))}/#{Sinatra::Base.environment}.db"))
 
-  # if File.exist?("facebooker.yml")
-  #   env=:production
-  #   yaml = YAML.load_file("facebooker.yml")[env.to_s]
-  #   facebook do
-  #     api_key yaml['api_key']
-  #     secret yaml['secret_key']
-  #     app_id yaml['app_id']
-  #     url yaml['canvas_page_name']
-  #     callback yaml['callback_url']
-  #   end
-  # end
+  if File.exist?("facebooker.yml")
+    env=:production
+    yaml = YAML.load_file("facebooker.yml")[env.to_s]
+    facebook do
+      api_key yaml['api_key']
+      secret yaml['secret_key']
+      app_id yaml['app_id']
+      url yaml['canvas_page_name']
+      callback yaml['callback_url']
+    end
+  end
 end
