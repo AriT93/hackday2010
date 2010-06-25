@@ -92,7 +92,7 @@ end
 get '/canvas/' do
   fb.require_login!
 
-  groups = fb.groups.get :uid => fb[:user]
+  groups = fb.groups.get(:uid => fb[:user])
 
   " Hey there, now that you're a member i can tell what groups you're in on facebook. <br/> #{groups.map{ |g| g['name']}.join('<br/>')}"
 
