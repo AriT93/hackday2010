@@ -51,7 +51,7 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    @userinfo = fb.users.getInfo :uid => current_user.fb_uid, :fields => [:name]
+    @myinf = fb.groups.get :uid => fb[:user]
     haml :index
   end
 end

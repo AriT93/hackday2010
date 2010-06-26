@@ -35,6 +35,7 @@ configure do
       app_id yaml['app_id']
       url yaml['canvas_page_name']
       callback yaml['callback_url']
+      symbolize_keys true
     end
   end
 end
