@@ -56,7 +56,7 @@ get '/' do
                      :secret = fb[:secret],
                      :app_id = fb[:app_id])
 
-    @friends = tb.friends.get :uid = fb[:user], :session_key = fb[:session_key]
+    @friends = tb.friends.get :uid => fb[:user], :session_key => fb[:session_key]
     haml :index
   end
 end
