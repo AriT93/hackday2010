@@ -56,7 +56,6 @@ get '/' do
                      :secret => 'ca85c1a9f608e112de2eb97e7cee67e5',
                      :app_id => 123673737674492)
     @tb.auth.createToken()
-    @tb.login()
     @tb.auth.getSession
     @friends = @tb.users.getInfo :uid => fb[:user], :fields =>[:name, :email]
     haml :index
