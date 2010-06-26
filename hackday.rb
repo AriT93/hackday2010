@@ -51,7 +51,7 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    tb = Sinbook.new(
+    @tb = Sinbook.new(
                      :api_key => '3a36c731cffc23da5c477ccd07a30c50',
                      :secret => 'ca85c1a9f608e112de2eb97e7cee67e5',
                      :app_id => 123673737674492)
