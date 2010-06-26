@@ -56,7 +56,7 @@ get '/' do
                      :secret => 'ca85c1a9f608e112de2eb97e7cee67e5',
                      :app_id => 123673737674492)
 
-    @friends = @tb.users.getInfo :uid => fb[:user],:fields =>[:name, :email], :session_key => fb[:session_key]
+    @friends = @tb.users.getInfo :uid => fb[:user],:fields =>[:name, :email]
     haml :index
   end
 end
