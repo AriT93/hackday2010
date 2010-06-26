@@ -51,7 +51,12 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    @myinf = fb.groups.get :uid => fb[:user]
+    tb = Sinbook.new(
+                     :api_key = fb[:api_key],
+                     :secret = fb[:secret],
+                     :app_id = fb[:app_id])
+
+    @friends = tb.friends.get :uid = fb[:user], :session_key = fb[:session_key]
     haml :index
   end
 end
