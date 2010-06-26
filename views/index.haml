@@ -1,5 +1,5 @@
 - @friends.each do |f|
-  - @bb tb.users.getInfo :uid => f, :fields => [:name]
+  - @bb = tb.users.getInfo :uid => f, :fields => [:name], :session_key => fb[:session_key]
   - @bb.each do |k,v|
     - #{k} #{v}
 #{fb[:session_key]}
