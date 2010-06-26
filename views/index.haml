@@ -1,4 +1,7 @@
-#{@friends[0]}
+- @friends.each do |f|
+  - @bb tb.users.getInfo :uid => f, :fields => [:name] fb[:session_key]
+  - @bb.each do |k,v|
+    - #{k} #{v}
 #{fb[:session_key]}
 %p
   #infoBoxes
