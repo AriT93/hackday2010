@@ -78,9 +78,6 @@ get '/canvas/' do
   if fb[:user]
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
     @user = HdUser.first(:email => @email.email)
-    @userinfo = fb.users_getInfo :uid => fb[:user].to_s, :fields => [:name], :session_key => fb[:session_key]
-  else
-    @userinfo = %w{ there are four words}
   end
 
   haml :fbook2, :layout => false
@@ -104,13 +101,4 @@ end
 get '/canvas/fbpolicies' do
   fb2hd
   haml :fbpolicies, :layout => false
-end
-
-get '/auth/facebook/callback' do
-  @user = User.find_by_facebook_uid(params[:auth][:user_id]) ||
-    User.create(:facebook_uid => params[:auth][:user_id],
-                :name => params[:auth][:info][:name],
-                :email => params[:auth][:info][:email])
-  session[:user_id] = @user.id
-  redirect '/'
 end
