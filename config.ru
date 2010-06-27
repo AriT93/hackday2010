@@ -16,5 +16,5 @@ log = File.new("log/sinatra.log", "a+")
 $stdout.reopen(log)
 $stderr.reopen(log)
 
-
+use Rack::FacebookConnect '3a36c731cffc23da5c477ccd07a30c50','ca85c1a9f608e112de2eb97e7cee67e5'
 run Sinatra::Application

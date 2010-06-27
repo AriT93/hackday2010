@@ -11,7 +11,7 @@ require 'rack-flash'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
-use Rack::FacebookConnect @@yaml['api_key'], @@yaml['secret_key']
+use Rack::FacebookConnect '3a36c731cffc23da5c477ccd07a30c50','ca85c1a9f608e112de2eb97e7cee67e5'
 
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
