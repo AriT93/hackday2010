@@ -1,6 +1,5 @@
 require "rubygems"
 require 'environment'
-require "rack/facebook_connect"
 #require 'sinbook'
 require 'sinatra'
 require 'dm-core'
@@ -9,6 +8,7 @@ require 'sinatra-authentication'
 require 'haml'
 require 'sass'
 require 'rack-flash'
+require 'rack/facebook_connect'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
