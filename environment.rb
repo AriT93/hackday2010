@@ -28,13 +28,13 @@ configure do
 
   if File.exist?("facebooker.yml")
     env=:production
-    yaml = YAML.load_file("facebooker.yml")[env.to_s]
+    @@yaml = YAML.load_file("facebooker.yml")[env.to_s]
     facebook do
-      api_key yaml['api_key']
-      secret yaml['secret_key']
-      app_id yaml['app_id']
-      url yaml['canvas_page_name']
-      callback yaml['callback_url']
+      api_key @@yaml['api_key']
+      secret @@yaml['secret_key']
+      app_id @@yaml['app_id']
+      url @@yaml['canvas_page_name']
+      callback @@yaml['callback_url']
       symbolize_keys true
     end
   end

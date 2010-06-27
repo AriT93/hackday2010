@@ -1,6 +1,6 @@
 require "rubygems"
 require 'environment'
-require 'sinbook'
+#require 'sinbook'
 require 'sinatra'
 require 'dm-core'
 require 'digest/sha1'
@@ -11,6 +11,7 @@ require 'rack-flash'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
+use Rack::FacebookConnect @@yaml['api_key'], @@yaml['secret_key']
 
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
@@ -103,4 +104,13 @@ end
 get '/canvas/fbpolicies' do
   fb2hd
   haml :fbpolicies, :layout => false
+end
+
+get '/auth/facebook/callback' do
+  @user = User.find_by_facebook_uid(params[:auth][:user_id]) ||
+    User.create(:facebook_uid => params[:auth][:user_id],
+                :name => params[:auth][:info][:name],
+                :email => params[:auth][:info][:email])
+  session[:user_id] = @user.id
+  redirect '/'
 end
