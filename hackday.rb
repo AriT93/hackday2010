@@ -1,5 +1,6 @@
 require "rubygems"
 require 'environment'
+require "rack/facebook_connect"
 #require 'sinbook'
 require 'sinatra'
 require 'dm-core'
