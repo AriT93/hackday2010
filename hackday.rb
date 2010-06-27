@@ -52,7 +52,7 @@ get '/' do
       @user.save
     end
     fieldsar = %w{name email}
-    @friends = fb.users.getInfo fb[:user], :fields => [:hometown_location]
+    @friends = fb.users.getInfo :uid => fb[:user], :fields => fieldsar
 
     #:uid => fb[:user], :fields =>['name'], :session_key => fb[:session_key]
 
