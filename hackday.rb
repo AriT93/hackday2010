@@ -51,10 +51,6 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    fieldsar = %w{hometown_location}
-    @friends = fb.users.getInfo :uid => fb[:user].to_i, :fields => fieldsar
-
-    #:uid => fb[:user], :fields =>['name'], :session_key => fb[:session_key]
 
     haml :index
   end
