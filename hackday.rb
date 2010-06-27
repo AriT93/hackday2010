@@ -1,6 +1,6 @@
 require "rubygems"
 require 'environment'
-#require 'sinbook'
+require 'sinbook'
 require 'sinatra'
 require 'dm-core'
 require 'digest/sha1'
@@ -8,11 +8,10 @@ require 'sinatra-authentication'
 require 'haml'
 require 'sass'
 require 'rack-flash'
-require 'rack/facebook_connect'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
-use Rack::FacebookConnect '3a36c731cffc23da5c477ccd07a30c50','ca85c1a9f608e112de2eb97e7cee67e5'
+
 
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
