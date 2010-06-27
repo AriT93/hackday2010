@@ -51,7 +51,9 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    @friends = fb.users.getInfo :uid => fb[:user], :fields =>['name'], :session_key => fb[:session_key]
+    @friends = fb.users.getInfo
+
+    #:uid => fb[:user], :fields =>['name'], :session_key => fb[:session_key]
 
     haml :index
   end
@@ -78,7 +80,7 @@ get '/canvas/' do
   if fb[:user]
     @email = DmUser.first(:fb_uid => fb[:user].to_s)
     @user = HdUser.first(:email => @email.email)
-    @userinfo = fb.users.getInfo :uid => fb[:user].to_s, :fields => [:name], :session_key => fb[:session_key]
+    @userinfo = fb.users_getInfo :uid => fb[:user].to_s, :fields => [:name], :session_key => fb[:session_key]
   else
     @userinfo = %w{ there are four words}
   end
