@@ -1,7 +1,6 @@
 %a{:href => @oauth_url}oauth
-- if @access_token != nil
-  - resp_hash = MiniFB.get(@access_token, fb[:user], :type => :user)
-  #{pp resp_hash}
+- resp_hash = MiniFB.get(@access_token, fb[:user], :type => :user)
+#{pp resp_hash}
 %p
   #infoBoxes
     #policies
