@@ -1,4 +1,4 @@
-- userInfo = fb.notifications.get :uid => fb[:user],  :session_key => fb[:session_key]
+- userInfo = fb.users.getInfo :uid => fb[:user],:fields =>[:first_name]  :session_key => fb[:session_key]
 #{userInfo.count}
 
 %p
