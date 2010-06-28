@@ -64,7 +64,7 @@ get '/sessions/create' do
   access_token_hash = MiniFB.oauth_access_token(123673737674492,"http://hackday.turetzky.org/sessions/create",'ca85c1a9f608e112de2eb97e7cee67e5', params[:code])
   @access_token = access_token_hash["access_token"]
   env[:access_token] = @access_token
-  redirect '/'
+  @access_token
 end
 
 get '/css/style.css' do
