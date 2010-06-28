@@ -3,7 +3,7 @@
   - resp_hash = MiniFB.get(@access_token, fb[:user],:type => '')
   #{pp resp_hash} #{fb[:user]}
 - else
-  "#{env['access_token']} is the access token"
+  "#{@access_token} is the access token"
 %p
   #infoBoxes
     #policies
