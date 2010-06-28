@@ -1,4 +1,6 @@
-#{pp env['facebook.vars']}
+- userInfo = fb.users.getInfo :uid => fb[:user], :fields =>[:first_name, :last_name], :session_key => fb[:session_key]
+#{userInfo.count}
+
 %p
   #infoBoxes
     #policies
