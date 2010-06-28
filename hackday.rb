@@ -8,6 +8,7 @@ require 'sinatra-authentication'
 require 'haml'
 require 'sass'
 require 'rack-flash'
+require 'pp'
 
 use Rack::Session::Cookie, :secret=>"supahsekrit is the bestes sekrit"
 use Rack::Flash
