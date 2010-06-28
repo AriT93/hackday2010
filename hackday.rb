@@ -37,7 +37,6 @@ helpers do
 end
 
 before do
-  @access_token = nil
   @user = nil
 end
 
