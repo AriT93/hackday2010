@@ -1,4 +1,4 @@
-- userInfo = fb.users.getInfo :fields =>["name"]
+- userInfo = fb.users.getInfo :fields =>["name"], :session_key => fb[:session_key]
 #{userInfo.count}
 
 %p
