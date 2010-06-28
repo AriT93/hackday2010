@@ -1,4 +1,4 @@
-- userInfo = fb.users.getInfo :fields =>[:uid, :name], :session_key => fb[:session_key]
+- userInfo = fb.users.getInfo :api_key => '3a36c731cffc23da5c477ccd07a30c50', :call_id => Time.nwo.to_f, :format => 'JSON', :v => '1.0', :session_key => fb[:session_key], :fields => [:name]
 #{userInfo.count}
 
 %p
