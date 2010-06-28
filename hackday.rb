@@ -54,14 +54,14 @@ get '/' do
       @user.save
     end
 
-    @oauth_url = MiniFB.oauth_url(fb[:app_id],"http://hackday.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
+    @oauth_url = MiniFB.oauth_url(123673737674492,"http://hackday.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
 
     haml :index
   end
 end
 
 get '/sessions/create' do
-  access_token_hash = MiniFB.oauth_access_token(fb[:app_id],"http://hackday.turetzky.org/sessions/create", fb[:secret], params[:code])
+  access_token_hash = MiniFB.oauth_access_token(123673737674492,"http://hackday.turetzky.org/sessions/create",ca85c1a9f608e112de2eb97e7cee67e5, params[:code])
   @access_token = access_token_hash["acess_token"]
   cookies[:access_token] = @access_token
 end
