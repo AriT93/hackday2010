@@ -53,7 +53,9 @@ get '/' do
       @user = HdUser.new(:email => current_user.email)
       @user.save
     end
-    @oauth_url = MiniFB.oauth_url(fb[:api_id],"http://hackday.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
+
+    @oauth_url = MiniFB.oauth_url(fb[:app_id],"http://hackday.turetzky.org/sessions/create",:scope=>MiniFB.scopes.join(","))
+
     haml :index
   end
 end
